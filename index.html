@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <meta charset="UTF-8" />
+  <title>Math Archive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 상단 바 -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="site-brand">
+        <h1 class="site-title">Math Archive</h1>
+        <p class="site-subtitle">by KIWI</p>
+      </div>
+      <nav class="top-nav">
+        <a href="#categories" class="nav-link">분류</a>
+        <a href="#about" class="nav-link">소개</a>
+      </nav>
+    </div>
+  </header>
+
+    <!-- 🌿 배너 이미지 섹션 -->
+    <section class="top-banner">
+        <img src="images/banner.png" alt="사이트 배너 이미지" class="banner-img" />
+    </section>
+
+    <!-- 🌿 히어로 섹션 -->
+    <section class="hero" id="top">
+        <div class="container hero-content">
+        <p class="hero-tagline">수학을 기록하는 아카이브</p>
+        <h2 class="hero-title">우리가 배우는 수학</h2>
+        <p class="hero-text">
+          공사 중...<br />
+          Next Update: 수학 기초론 / 대수학 / 기하학 / 해석학 / 이산수학
+        </p>
+        <a href="#categories" class="hero-button">분야 살펴보기</a>
+        </div>
+    </section>
+    <br />
+    <br />
+
+    <!-- 주요 콘텐츠 영역 -->
+    
+    <!-- 🌳 Math Tree 섹션 -->
+<section class="math-tree" id="math-tree">
+  <div class="container">
+    <h2 class="section-title">Math Tree</h2>
+    <p class="section-description">
+      : 수학의 분류 체계<br />
+      MSC(Mathematics Subject Classification), 듀이십진분류법의 510 항목, 한국십진분류법의 410 항목에서 이용하는 분류의 뼈대를 바탕으로 만든 Math Tree.
+    </p>
+
+    <div class="math-tree-wrapper">
+      <!-- 최상위: 수학 전체는 토글이 아니라 텍스트 -->
+      <p class="math-tree-root">
+        <strong>Mathematics</strong>
+        <span class="math-tree-root-sub">
+          · 수학 기초론 · 대수학 · 기하학 · 해석학 · 이산수학
+        </span>
+      </p>
+
+      <!-- 하위 분류들 전체를 한 덩어리로 묶기 -->
+      <div class="math-tree-group">
+        <!-- 수학 기초론 -->
+        <details class="math-toggle">
+          <summary class="math-toggle-summary">
+            <span class="math-toggle-title">수학 기초론 (Foundations)</span>
+            <span class="math-toggle-sub">집합, 논리, 공리, 모형</span>
+          </summary>
+          <div class="math-toggle-body">
+            <ul class="math-tree-list">
+              <li>집합론</li>
+              <li>순서론</li>
+              <li>수리논리학</li>
+              <li>형식증명이론 (논리학)</li>
+              <li>범주론</li>
+              <li>타입 이론</li>
+              <li>형식 언어론</li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- 대수학 -->
+        <details class="math-toggle">
+          <summary class="math-toggle-summary">
+            <span class="math-toggle-title">대수학 (Algebra)</span>
+            <span class="math-toggle-sub">군, 환, 체, 선형대수</span>
+          </summary>
+          <div class="math-toggle-body">
+            <ul class="math-tree-list">
+              <li>추상대수학</li>
+              <li>선형대수학</li>
+              <li>가환대수학</li>
+              <li>정수론 (대수적 정수론·해석적 정수론)</li>
+              <li>대수기하학 (호몰로지 이론)</li>
+              <li>범주론</li>
+              <li>표현론</li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- 기하학 -->
+        <details class="math-toggle">
+          <summary class="math-toggle-summary">
+            <span class="math-toggle-title">기하학 (Geometry)</span>
+            <span class="math-toggle-sub">곡선, 곡면, 위상 공간</span>
+          </summary>
+          <div class="math-toggle-body">
+            <ul class="math-tree-list">
+              <li>유클리드 기하학</li>
+              <li>논증 기하학</li>
+              <li>해석기하학</li>
+              <li>대수기하학 (호몰로지 이론)</li>
+              <li>미분기하학</li>
+              <li>위상수학 (점-집합 위상수학·매듭이론·대수위상수학)</li>
+              <li>비유클리드 기하학</li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- 해석학 -->
+        <details class="math-toggle">
+          <summary class="math-toggle-summary">
+            <span class="math-toggle-title">해석학 (Analysis)</span>
+            <span class="math-toggle-sub">수열, 급수, 미분, 적분</span>
+          </summary>
+          <div class="math-toggle-body">
+            <ul class="math-tree-list">
+              <li>미적분학</li>
+              <li>실해석학</li>
+              <li>복소해석학</li>
+              <li>측도론</li>
+              <li>해석 기하학</li>
+              <li>범함수 미적분학</li>
+              <li>미분기하학</li>
+              <li>수치해석학</li>
+              <li>분수계 미적분학</li>
+              <li>해석적 정수론</li>
+              <li>카오스 이론</li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- 이산수학 -->
+        <details class="math-toggle">
+          <summary class="math-toggle-summary">
+            <span class="math-toggle-title">이산수학 (Discrete Mathematics)</span>
+            <span class="math-toggle-sub">그래프, 조합론, 알고리즘</span>
+          </summary>
+          <div class="math-toggle-body">
+            <ul class="math-tree-list">
+              <li>그래프 이론</li>
+              <li>조합론</li>
+              <li>정수론</li>
+              <li>암호 이론</li>
+              <li>알고리즘과 계산복잡도 이론</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+<br />
+    <!-- 수학 분류 섹션 -->
+    <section class="categories" id="categories">
+      <div class="container">
+        <h2 class="section-title">분야</h2>
+        <p class="section-description">
+          : 앞으로 글과 노트를 쌓아갈 다섯 가지 분야 <br />
+          공사 중...
+        </p>
+
+        <div class="category-grid">
+          <!-- 수학 기초론 -->
+          <article class="category-card">
+            <h3 class="category-title">수학 기초론</h3>
+            <p class="category-subtitle">: 수학의 기초에 대해 연구하는, 수학과 논리학의 분과</p>
+            <p class="category-body">
+              집합론, 명제 논리, 1차 논리, 공리계와 모형 등 수학의 뼈대를 이루는 내용을 모아두는 공간.
+            </p>
+            <button class="category-button" type="button">Next: 글 연결하기</button>
+          </article>
+
+          <!-- 대수학 -->
+          <article class="category-card">
+            <h3 class="category-title">대수학</h3>
+            <p class="category-subtitle">: 현대 수학에서 대수적 구조, 즉 집합과 그 위에 정의된 연산에 대한 규칙을 연구하는 학문</p>
+            <p class="category-body">
+              군론, 환론, 체론, 선형대수학 등 구조와 대칭을 다루는 내용을 정리하는 공간.
+            </p>
+            <button class="category-button" type="button">Next: 글 연결하기</button>
+          </article>
+
+          <!-- 기하학 -->
+          <article class="category-card">
+            <h3 class="category-title">기하학</h3>
+            <p class="category-subtitle">: 점, 직선, 곡선, 면, 부피 등 공간의 성질을 연구하는 수학의 한 분야</p>
+            <p class="category-body">
+              유클리드/비유클리드 기하, 미분기하, 위상공간론 등 공간과 형태를 다루는 내용을 모아두는 공간.
+            </p>
+            <button class="category-button" type="button">Next: 글 연결하기</button>
+          </article>
+
+          <!-- 해석학 -->
+          <article class="category-card">
+            <h3 class="category-title">해석학</h3>
+            <p class="category-subtitle">: 위상적·대수적 성질을 갖춘 공간과 공간에서 정의된 함수의 성질을 연구하는 기초 수학의 한 분야</p>
+            <p class="category-body">
+              엄밀한 한계, 연속, 미분, 적분, 측도와 르베그 적분 등과 관련된 내용을 정리하는 공간.
+            </p>
+            <button class="category-button" type="button">Next: 글 연결하기</button>
+          </article>
+
+          <!-- 이산수학 -->
+          <article class="category-card">
+            <h3 class="category-title">이산수학</h3>
+            <p class="category-subtitle">: 정수, 논리 연산과 같이 서로의 값들이 연속적이지 않고 떨어져 있거나 구분되어 '셀 수 있는' 것들을 주로 연구하는 학문</p>
+            <p class="category-body">
+              그래프 이론, 조합론, 수론, 알고리즘 등 이산적인 구조를 다루는 내용을 모아두는 공간.
+            </p>
+            <button class="category-button" type="button">Next: 글 연결하기</button>
+          </article>
+        </div>
+      </div>
+    </section>
+    <br />
+    <!-- ⭐ 수학에 관한 흥미로운 이야기 섹션 -->
+    <section class="stories" id="stories">
+        <div class="container">
+        <h2 class="section-title">수학에 관한 흥미로운 이야기</h2>
+        <p class="section-description">
+          : 수학자들의 비화, 수학 개념이 탄생한 역사 등을 가볍게 정리하는 공간. <br />
+          공사 중...
+        </p>
+
+        <div class="story-list">
+            <div class="story-item">
+                <span class="story-title">뉴턴과 라이프니츠의 미적분 발명 논쟁: 누가 먼저 만들었을까?</span>
+            </div>
+        </div>
+        </div>
+    </section>
+    <br />
+    <!-- 사이트 소개 섹션 -->
+    <section class="about" id="about">
+      <div class="container about-inner">
+        <div class="about-text">
+          <h2 class="section-title">사이트 소개</h2>
+          <p>
+            수학을 공부하면서 떠올린 생각과 정리한 내용을 분야별로 아카이빙하기 위한 개인용 웹사이트.
+          </p>
+          <p>
+            아직은 공사 중! <br />
+            Later Update: 글 목록, 태그, 검색 기능
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 하단 -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 KIWI. All rights reserved.</p>
+      <p class="footer-meta">Last Update: 2025-11-30</p>
+    </div>
+  </footer>
+</body>
+</html>

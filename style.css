@@ -1,0 +1,508 @@
+/* ========== 기본 세팅 ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 전체 톤: 따뜻한 아이보리 + 낮은 채도의 녹색/갈색 */
+  --bg: #f5f0e8;              /* 페이지 배경 (밝은 아이보리) */
+  --bg-elevated: #fdf8f0;     /* 섹션 박스 배경 */
+  --bg-card: #fbf4e7;         /* 카드 배경 */
+  --accent-green: #6f8f74;    /* 포인트 초록 (낮은 채도) */
+  --accent-brown: #a27a4a;    /* 포인트 갈색 (낮은 채도) */
+  --accent-soft-green: #e2eee4;
+  --accent-soft-brown: #efe2cf;
+  --text-main: #3d3a33;       /* 본문 글자색 (짙은 갈색/회색) */
+  --text-muted: #8a8577;      /* 설명용 흐린 글자색 */
+  --border-subtle: #ddcfb9;   /* 옅은 베이지 테두리 */
+  --radius-xl: 1.5rem;
+  --shadow-soft: 0 14px 40px rgba(171, 150, 120, 0.25);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* 공통 컨테이너 */
+.container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ========== 헤더 ========== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(12px);
+  background: rgba(245, 240, 232, 0.92);
+  border-bottom: 1px solid rgba(221, 207, 185, 0.9);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 0.5rem;
+  gap: 1rem;
+}
+
+.site-brand {
+  display: flex;
+  flex-direction: row;     /* 가로 배치 */
+  align-items: baseline;   /* 제목과 by 텍스트의 기준선 맞추기 */
+  gap: 0.4rem;             /* 둘 사이 여백 */
+}
+
+.site-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.site-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* 상단 네비게이션 */
+.top-nav {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--text-muted);
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: all 0.18s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent-green);
+  border-color: rgba(158, 181, 160, 0.7);
+  background-color: rgba(248, 242, 232, 0.9);
+}
+
+/* ========== 배너 / 히어로 영역 ========== */
+.hero {
+  position: relative;
+  margin: 0;
+  padding: 2.5rem 0 2.8rem;
+  border-radius: 0;
+  background: var(--bg-elevated); /* 밝은 베이지 배경 */
+  box-shadow: none;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  position: relative;
+  padding: 2.4rem 1.8rem 2.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 620px;
+}
+
+/* 히어로 텍스트들 */
+.hero-tagline {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-green);
+  font-weight: 600;
+}
+
+.hero-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.hero-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.hero-button {
+  align-self: flex-start;
+  margin-top: 0.8rem;
+  padding: 0.65rem 1.35rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(
+    135deg,
+    var(--accent-green),
+    var(--accent-brown)
+  );
+  color: #fffcf7;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 10px 26px rgba(140, 165, 141, 0.45);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+}
+
+.hero-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 34px rgba(140, 165, 141, 0.55);
+  filter: brightness(1.03);
+}
+
+/* ========== 섹션 공통 ========== */
+.section-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.section-description {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 1.4rem;
+}
+
+/* ========== 수학 분류 카드 ========== */
+.categories {
+  margin-bottom: 3rem;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.1rem;
+}
+
+.category-card {
+  background: linear-gradient(
+    135deg,
+    var(--bg-card),
+    #f9f1e4
+  );
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  padding: 1.1rem 1.2rem 1.1rem;
+  box-shadow: 0 10px 26px rgba(189, 168, 141, 0.16);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 카드 위에 아주 은은한 초록빛 하이라이트 */
+.category-card::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(
+    circle at top right,
+    rgba(164, 188, 164, 0.23),
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+.category-card:hover::before {
+  opacity: 1;
+}
+
+.category-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.category-subtitle {
+  font-size: 0.82rem;
+  color: var(--accent-green);
+}
+
+.category-body {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+/* 카드 버튼 (나중에 기능 붙일 자리) */
+.category-button {
+  margin-top: 0.7rem;
+  align-self: flex-start;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 183, 154, 0.9);
+  background-color: #fbf5ea;
+  color: var(--text-muted);
+  cursor: default;
+}
+
+/* ========== 소개 섹션 ========== */
+.about {
+  margin-bottom: 3.5rem;
+}
+
+.about-inner {
+  padding: 1.6rem 1.5rem 1.8rem;
+  border-radius: 1.5rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 12px 30px rgba(192, 170, 138, 0.3);
+}
+
+.about-text p + p {
+  margin-top: 0.6rem;
+}
+
+/* ========== 푸터 ========== */
+.site-footer {
+  border-top: 1px solid rgba(214, 199, 174, 0.9);
+  padding: 1.2rem 0;
+  background: #f1e5d6;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.footer-meta {
+  opacity: 0.9;
+}
+
+/* ========== 반응형 조정 ========== */
+@media (max-width: 720px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero {
+    margin-top: 1rem;
+  }
+
+  .hero-content {
+    padding: 2rem 1.4rem 2.1rem;
+  }
+
+  .hero-title {
+    font-size: 1.55rem;
+  }
+}
+
+/* ========== 흥미로운 이야기 섹션 ========== */
+.stories {
+  margin-bottom: 3rem;
+}
+
+.story-list {
+  display: flex;
+  flex-direction: column;   /* 나중에 여러 개 넣었을 때 세로로 쌓이게 */
+  gap: 0.7rem;
+}
+
+.story-item {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(
+    135deg,
+    var(--bg-card),
+    #f9f1e4
+  );
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 26px rgba(189, 168, 141, 0.16);
+  display: flex;
+  align-items: center;
+  cursor: default;
+  transition: all 0.18s ease;
+}
+
+.story-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(189, 168, 141, 0.26);
+  background: linear-gradient(
+    135deg,
+    #f9f1e4,
+    var(--bg-card)
+  );
+}
+
+.story-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+/* ================================
+   🌿 히어로 위에 들어가는 배너 이미지 (직각 + 3:1 비율)
+   ================================ */
+
+.top-banner {
+  width: 100%;
+  margin: 0;              /* 상단바와 딱 붙게 */
+  padding: 0;
+}
+
+.banner-img {
+  width: 100%;
+  aspect-ratio: 3 / 1;     /* 배너를 3:1 비율로 정확하게 표시 */
+  object-fit: cover;       /* 배너가 너무 작거나 커도 비율 유지 후 잘 맞춤 */
+  display: block;          /* 이미지 아래 빈 공백 제거 */
+  border-radius: 0;        /* 둥근 모서리 제거 (직각) */
+}
+
+/* ================================
+   🌳 Math Tree (정돈된 들여쓰기 & 커스텀 토글)
+   ================================ */
+
+.math-tree {
+  margin-bottom: 3rem;
+}
+
+.math-tree-wrapper {
+  background: var(--bg-elevated);
+  border-radius: 1.3rem;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 12px 32px rgba(192, 170, 138, 0.25);
+  padding: 1.4rem 1.2rem 1.5rem;
+}
+
+/* 최상단 "Mathematics (수학 전체)" 한 줄 */
+.math-tree-root {
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.math-tree-root-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* 하위 분류 전체를 오른쪽으로 들여쓰기 */
+.math-tree-group {
+  margin-left: 0.6rem;
+  padding-left: 1.2rem;
+  border-left: 1.5px solid rgba(201, 183, 154, 0.9);
+}
+
+/* 각 분야 토글(details) */
+.math-toggle {
+  margin: 0.25rem 0 0.3rem;
+}
+
+/* summary 공통 스타일 */
+.math-toggle > summary {
+  list-style: none;              /* 기본 리스트 스타일 제거 */
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.6rem;
+  padding: 0.4rem 0.7rem 0.4rem 1.5rem;  /* 왼쪽을 넉넉히 띄움(아이콘 자리) */
+  border-radius: 0.7rem;
+  background: #fbf4e7;
+  border: 1px solid rgba(221, 207, 185, 0.9);
+  position: relative;           /* ::before 아이콘 위치 기준 */
+  transition: background-color 0.15s ease, box-shadow 0.15s ease,
+    transform 0.1s ease;
+}
+
+/* 브라우저 기본 ▸/▾ 마커 완전히 제거 */
+.math-toggle > summary::-webkit-details-marker {
+  display: none;
+}
+.math-toggle > summary::marker {
+  content: "";
+}
+
+/* 우리가 쓰는 가짜 화살표 아이콘 */
+.math-toggle > summary::before {
+  content: "▸";
+  position: absolute;
+  left: 0.55rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  color: var(--accent-green);
+}
+
+/* 열렸을 때는 아래 화살표로 변경 */
+.math-toggle[open] > summary::before {
+  content: "▾";
+}
+
+/* hover 효과 */
+.math-toggle > summary:hover {
+  background-color: #f6ecde;
+  box-shadow: 0 4px 10px rgba(189, 168, 141, 0.25);
+  transform: translateY(-1px);
+}
+
+/* 제목 + 보조 설명 글꼴 */
+.math-toggle-title {
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.math-toggle-sub {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* 펼쳐졌을 때 본문 영역:
+   summary보다 더 오른쪽(아이콘+제목보다 우측)에서 시작 */
+.math-toggle-body {
+  padding: 0.35rem 0.4rem 0.6rem 2.1rem;
+}
+
+/* 리스트 들여쓰기/간격: 첫 글자가 항상 화살표보다 오른쪽 */
+.math-tree-list {
+  margin: 0;
+  padding-left: 1.1rem;   /* bullet과 텍스트 간격 */
+  list-style-type: disc;
+}
+
+.math-tree-list li {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  margin: 0.12rem 0;
+}
+
+/* 작은 화면에서 살짝 압축 */
+@media (max-width: 720px) {
+  .math-tree-wrapper {
+    padding: 1.1rem 1rem 1.3rem;
+  }
+
+  .math-tree-group {
+    margin-left: 0.5rem;
+    padding-left: 1rem;
+  }
+
+  .math-toggle-body {
+    padding-left: 1.8rem;
+  }
+}
+
